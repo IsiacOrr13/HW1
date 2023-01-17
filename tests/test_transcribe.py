@@ -26,7 +26,7 @@ def test_transcribe():
     Write your unit test for the
     transcribe function here.
     """
-    assert 1 == 1
+    assert 1 == 5
 
 def test_reverse_transcribe():
     """
