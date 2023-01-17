@@ -34,14 +34,14 @@ def get_filepath(which):
 
 
 def open_fastq_reference():
-    f = pathlib.Path(__file__).resolve().parent / "parse_test_1.txt"
+    f = pathlib.Path(__file__).resolve().parent / "test.fq"
     with f.open() as f:
         seqs = list(map(lambda l: l.strip().split("|"), f.readlines()))
     return seqs  # will be list of lists with seq, quality that were parsed from the test files using get-seq.sh
 
 
 def open_fasta_reference():
-    f = pathlib.Path(__file__).resolve().parent / "parse_test_1.txt"
+    f = pathlib.Path(__file__).resolve().parent / "test.fa"
     with f.open() as f:
         seqs = list(map(lambda l: l.strip(), f.readlines()))
     return seqs  # will be a list of seqs, quality that were parsed from the test files using get-seq.sh
@@ -57,9 +57,11 @@ def test_FastaParser():
     does not work when given incorrect input.
     """
     
-    data = get_filepath('fasta')
+    fasta_parser = FastaParser(get_filepath("fasta"))
+    for i in fasta_parser:
+        return i
     
-    assert open_fasta_reference() == "File parse_test_1.txt had 0 lines."
+    assert i == open_fasta_reference()
 
 def test_FastqParser():
     """
@@ -70,4 +72,9 @@ def test_FastqParser():
     write a test that checks that the parser 
     does not work when given incorrect input.
     """
-    assert True
+    
+    fastq_parser = FastqParser(get_filepath("fastq"))
+    for i in fastq_parser:
+        return i
+    
+    assert i == open_fasta_reference()
