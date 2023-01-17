@@ -26,11 +26,16 @@ def test_transcribe():
     Write your unit test for the
     transcribe function here.
     """
-    assert 1 == 5
+    assert transcribe(SEQ) == "UGACUUGGG"
 
 def test_reverse_transcribe():
     """
     Write your unit test for the
     reverse transcribe function here.
     """
-    assert 2 == 2
+    assert reverse_transcribe(SEQ) == "GGGUUCAGU"
+
+test_freebie_transcribe_1()
+test_freebie_transcribe_2()    
+test_transcribe()
+test_reverse_transcribe()

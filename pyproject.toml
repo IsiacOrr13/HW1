@@ -1,12 +1,12 @@
 [build-system]
-requires = [
+requies = [
 	"flit_core >=3.2,<4",
 	"python_version >= '3.7'"
 	]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "seqparser"
+nam = "seqparser"
 authors = [{name = "Isiac Orr", email = "Isiac.Orr@ucsf.edu"}]
 readme = "README.md"
 license = {file = "LICENSE"}
