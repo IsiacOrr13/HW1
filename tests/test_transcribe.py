@@ -33,6 +33,7 @@ def test_reverse_transcribe():
     Write your unit test for the
     reverse transcribe function here.
     """
+    print('hit')
     assert reverse_transcribe(SEQ) == "GGGUUCAGU"
 
 test_freebie_transcribe_1()
